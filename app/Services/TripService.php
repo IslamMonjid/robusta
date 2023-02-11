@@ -35,4 +35,10 @@ class TripService implements TripServiceInterface
         $avalible_seats = $this->bookingRepository->getAvalibleSeats($trip_id,$booking_stations,$seats);
         return $avalible_seats;
     }
+
+    public function createBooking($user_id, $trip_id,$start_station, $end_station, $seat_id){
+        $booking_stations = $this->stationRepository->getStationsForBooking($start_station, $end_station);
+        $booking = $this->bookingRepository->create($user_id, $trip_id, $booking_stations, $seat_id);
+        return $booking;
+    }
 }

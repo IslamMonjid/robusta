@@ -40,4 +40,15 @@ class BookingRepository implements BookingRepositoryInterface
         }
         return $avalible_seats;
     }
+
+    public function create($user_id, $trip_id, $booking_stations, $seat_id){
+        $booking = Booking::create([
+            'user_id' => $user_id,
+            'trip_id' => $trip_id,
+            'seat_id' => $seat_id
+        ]);
+
+        $booking->stations()->sync($booking_stations);
+        return $booking;
+    }
 }

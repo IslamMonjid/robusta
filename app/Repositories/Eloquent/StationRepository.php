@@ -2,7 +2,6 @@
 
 namespace App\Repositories\Eloquent;
 
-use App\Models\Trip;
 use App\Models\Station;
 use App\Repositories\Interfaces\StationRepositoryInterface;
 
