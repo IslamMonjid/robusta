@@ -11,3 +11,5 @@ API server using laravel framework
 
 API will be available on http://localhost
 PHP myadmin will be avaliable on http://localhost:8888/
+
+## Postman Collection Attached
