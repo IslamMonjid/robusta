@@ -18,17 +18,17 @@ class BookingSeeder extends Seeder
         $bookings = [
             [
                 'trip_id' => 6,
-                'seat_id' => 1,
+                'seat_id' => 61,
                 'user_id' => 1
             ],
             [
                 'trip_id' => 6,
-                'seat_id' => 2,
+                'seat_id' => 62,
                 'user_id' => 1
             ],
             [
                 'trip_id' => 6,
-                'seat_id' => 3,
+                'seat_id' => 63,
                 'user_id' => 1
             ]
         ];

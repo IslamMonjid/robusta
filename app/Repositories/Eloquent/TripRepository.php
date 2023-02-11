@@ -3,6 +3,7 @@
 namespace App\Repositories\Eloquent;
 
 use App\Models\Trip;
+use App\Models\Seat;
 use App\Repositories\Interfaces\TripRepositoryInterface;
 
 class TripRepository implements TripRepositoryInterface
@@ -22,8 +23,16 @@ class TripRepository implements TripRepositoryInterface
         $this->model = $model;
     }
 
-    public function getAvalibleTrips(){
+    public function getAvalibleTrips()
+    {
         $trips = Trip::with('stations')->get();
         return $trips;
+    }
+
+    public function getAllTripSeats($trip_id)
+    {
+        $trip = Trip::with('bus')->where('id',$trip_id)->first();
+        $seats = Seat::where('bus_id',$trip->bus_id)->get();
+        return $seats;
     }
 }

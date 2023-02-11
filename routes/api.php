@@ -22,5 +22,6 @@ Route::controller(AuthController::class)->group(function () {
 });
 
 Route::controller(TripController::class)->group(function () {
-    Route::get('trips', 'getAvalibleTrips');
+    Route::post('trips/seats', 'getSeats');
+    Route::get('trips/get', 'getAvalibleTrips');
 });
